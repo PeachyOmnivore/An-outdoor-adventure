@@ -20,7 +20,7 @@ export default function Adventure() {
     return currentPage && (
         <div className="page-container">
             <p>{currentPage.page}</p>
-            <div>
+            <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input 
                     key={option.title} 

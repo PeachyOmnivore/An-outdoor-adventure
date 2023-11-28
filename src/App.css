@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.page-container {
+    color: white;
+    text-align: center;
+}
+
+.options-container {
+    background-color: grey;
+}
+
+.options-container input {
+    background-color: grey;
+    border: 1px solid white;
+    margin: 10px;
+}
