@@ -23,6 +23,7 @@ export default function Adventure() {
             <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input 
+                    className="selections"
                     key={option.title} 
                     type="button" 
                     value={option.title} 

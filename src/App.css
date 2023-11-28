@@ -13,6 +13,8 @@ body {
 }
 
 .page-container {
+    display: grid;
+    place-items: center;
     height: 350px;
     width: 600px;
 
@@ -36,13 +38,14 @@ body {
     margin-top: 20px;
 }
 
-.options-container input {
+.selections {
 
     color: white;
     background-color: rgba(248, 77, 15, 0.281);
     border-radius: 10px;
     margin: 30px;
     height: 30px;
+    padding: 10px;
 
     animation: 5s fadeIn;
     animation-fill-mode: forwards;
@@ -51,7 +54,7 @@ body {
     visibility: hidden;
 }
 
-.options-container input:hover{
+.selections:hover{
     background-color: rgba(248, 77, 15, 0.571);;
 }
 
