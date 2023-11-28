@@ -1,4 +1,5 @@
 * {
+    font-family: 'Playfair Display', serif;
     margin: 0px;
     padding: 0px;
 }
@@ -7,19 +8,60 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: black;
+    display: grid;
+    place-items: center;
 }
 
 .page-container {
+    height: 350px;
+    width: 600px;
+
     color: white;
+    background: radial-gradient( closest-side, rgba(255, 255, 255, 0.203),rgba(255, 255, 255, 0.197), rgb(0, 0, 0));
+    padding: 80px;
     text-align: center;
+    font-size: 30px;
+
+    animation: 6s fadeIn;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+
+    visibility: hidden;
 }
 
 .options-container {
-    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20px;
 }
 
 .options-container input {
-    background-color: grey;
-    border: 1px solid white;
-    margin: 10px;
+
+    color: white;
+    background-color: rgba(248, 77, 15, 0.281);
+    border-radius: 10px;
+    margin: 30px;
+    height: 30px;
+
+    animation: 5s fadeIn;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+
+    visibility: hidden;
+}
+
+.options-container input:hover{
+    background-color: rgba(248, 77, 15, 0.571);;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
