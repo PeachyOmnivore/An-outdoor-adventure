@@ -11,7 +11,7 @@ export default function Adventure() {
     }
 
     useEffect(() => {
-        populateStory(2)
+        populateStory(1)
     }, [])
 
 
@@ -20,14 +20,17 @@ export default function Adventure() {
     return currentPage && (
         <div className="page-container">
             <p>{currentPage.page}</p>
-            <form action="">
-                {currentPage.options.map((option)=> {
-                    <>
-                    <label htmlFor="">{option.title}</label>
-                    <input type="radio" value={option.title} />
-                    </>
+            <div>
+                {currentPage.options.map((option) => {
+                    return <input 
+                    key={option.title} 
+                    type="button" 
+                    value={option.title} 
+                    name={option.goTo}
+                    onClick={() => { populateStory(option.goTo) }}
+                    />
                 })}
-            </form>
+            </div>
         </div>
     )
 
