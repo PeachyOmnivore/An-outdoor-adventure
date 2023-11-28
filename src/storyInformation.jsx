@@ -1,8 +1,10 @@
 
 
-const adventureInfo = {
-    adventurer: localStorage.getItem("explorer")
-}
+    const adventureInfo = {
+        adventurer: sessionStorage.getItem("explorer"),
+        drink: sessionStorage.getItem("drink"),
+    }
+
 
 
 const theStory = [
@@ -56,4 +58,4 @@ const theStory = [
 
 
 
-export { theStory, adventureInfo }
+export { theStory }

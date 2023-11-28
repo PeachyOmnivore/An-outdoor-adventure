@@ -38,13 +38,28 @@ body {
     margin-top: 20px;
 }
 
+.name-input {
+    color: white;
+    background-color: rgb(114, 189, 242);
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 30px;
+    padding: 5px;
+}
+
+.start-link {
+    text-decoration: none;
+}
+
 .selections {
+    display: grid;
+    place-content: center;
 
     color: white;
-    background-color: rgba(248, 77, 15, 0.281);
+    background-color: rgba(255, 71, 4, 0.438);
     border-radius: 10px;
     margin: 30px;
-    height: 30px;
+    height: 40px;
     padding: 10px;
 
     animation: 5s fadeIn;
@@ -55,7 +70,7 @@ body {
 }
 
 .selections:hover{
-    background-color: rgba(248, 77, 15, 0.571);;
+    background-color: rgba(248, 77, 15, 0.571);
 }
 
 @keyframes fadeIn {

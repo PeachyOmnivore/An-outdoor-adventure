@@ -5,6 +5,7 @@ export default function Adventure() {
 
     const [currentPage, setCurrentPage] = useState()
 
+
     const populateStory = (id) => {
         const result = theStory.find(object => object.id === id)
         return setCurrentPage(result)
