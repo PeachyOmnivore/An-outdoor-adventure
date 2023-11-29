@@ -2,7 +2,7 @@ import './App.css'
 import StoryStart from './Components/storyStart'
 import Adventure from './Components/adventure'
 import Name from './Components/name'
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState } from 'react'
 import { theStory } from './storyInformation'
 

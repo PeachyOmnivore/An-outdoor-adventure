@@ -43,7 +43,7 @@ const theStory = {
             options: [
                 {
                     title: "The Mountains",
-                    goTo: 4,
+                    goTo: 3,
                 },
                 {
                     title: "The Ocean",
@@ -60,7 +60,7 @@ const theStory = {
             ]
         },
         {
-            id: 4,
+            id: 3,
             page: "You decide that because of todays weather and also how earlier you've gotten up, that a trip into the mountains seems like the best course of action. No day in the mountains is a good idea alone. You remember you have some friends that might love a day in the mountains.",
             question: "Which friend would you like to ask to join you? ",
             selectionKey: "friend",
@@ -79,6 +79,30 @@ const theStory = {
                 },
                 {
                     title: "Heather",
+                    goTo: -1,
+                },
+            ]
+        },
+        {
+            id: 4,
+            page: "You give your friend [friend] a call and to see what they are up to and they answer. 'Hey! [name], how are you doing? Beautiful day no?` You reply with a simple yet kind answer.",
+            question: "What do you say?",
+            selectionKey: "MountainActivity",
+            options: [
+                {
+                    title: "Great day for a hike! What do you say?",
+                    goTo: -1,
+                },
+                {
+                    title: "Im thinking 2 wheels and some dirt paths, eeeeh?",
+                    goTo: -1,
+                },
+                {
+                    title: "The rocks are calling our names",
+                    goTo: -1,
+                },
+                {
+                    title: "I see some snow in the gullies! You in!?",
                     goTo: -1,
                 },
             ]
