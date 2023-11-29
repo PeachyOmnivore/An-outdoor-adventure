@@ -21,6 +21,7 @@ export default function Adventure() {
     return currentPage && (
         <div className="page-container">
             <p>{currentPage.page}</p>
+            <h3>{currentPage.question}</h3>
             <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input 
