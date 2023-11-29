@@ -2,7 +2,7 @@ import './App.css'
 import StoryStart from './Components/storyStart'
 import Adventure from './Components/adventure'
 import Name from './Components/name'
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom"
 import { useState } from 'react'
 import { theStory } from './storyInformation'
 
@@ -15,14 +15,25 @@ const savedStory = savedStoryString? JSON.parse(savedStoryString) : null
 function App() {
 
   const [story, setStory] = useState(savedStory || theStory)
+  const navigate = useNavigate()
 
   const updateStory = (obj) => {
     setStory(obj)
     localStorage.setItem("story", JSON.stringify(obj))
   }
 
+  const resetStory = () =>{
+    localStorage.clear()
+    const updateStory = { ...story, selection: {},}
+        setStory(updateStory)
+
+    console.log(story)
+    navigate("/")
+  }
+
   return (
     <>
+    <button onClick={resetStory}>Restart Story</button>
       <Routes>
         <Route path='/' element={<StoryStart />} />
         <Route

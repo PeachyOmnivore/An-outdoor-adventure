@@ -45,7 +45,7 @@ export default function Adventure({ story, setStory }) {
     return currentPage && (
         <div className="page-container">
             <p>{textRenderer(currentPage.page, story.selection)}</p>
-            <h3 className="question fadeIn">{currentPage.question}</h3>
+            <h3 className="question fadeIn">{textRenderer(currentPage.question, story.selection)}</h3>
             <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input

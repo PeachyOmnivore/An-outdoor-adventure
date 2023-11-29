@@ -24,11 +24,11 @@ body {
     text-align: center;
     font-size: 30px;
 
-    animation: 6s fadeIn;
+    /* animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 3s;
 
-    visibility: hidden;
+    visibility: hidden; */
 }
 
 .question {
@@ -66,18 +66,18 @@ body {
     height: 40px;
     padding: 10px;
 
-    animation: 5s fadeIn;
+    /* animation: 5s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 5s;
 
-    visibility: hidden;
+    visibility: hidden; */
 }
 
 .selections:hover{
     background-color: rgba(248, 77, 15, 0.571);
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -86,4 +86,4 @@ body {
         visibility: visible;
         opacity: 1;
     }
-}
+} */
