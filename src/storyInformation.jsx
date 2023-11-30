@@ -233,7 +233,7 @@ const theStory = {
             id: 10,
             class: "regularPage",
             requiredSelections: ["friend", "hikeLocation"],
-            page: "{friend} replies 'I think today is going to amazing!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
+            page: "{friend} replies 'I think today is going to amazing!' You then proceed to drive down the road towards your destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
             selectionKey: "",
             options: [
@@ -245,54 +245,46 @@ const theStory = {
             ]
         },
         {
-            id: 0,
+            id: 11,
             class: "regularPage",
             requiredSelections: [],
-            page: "",
-            question: "",
-            selectionKey: "",
+            page: "'Ah what a nice smell. The forest always brings me joy' says {friend}. 'Lets look at a map' You ask. Given for the amount of time you have, you should be able to fit in a moderate hike",
+            question: "Point towards:",
+            selectionKey: "hikeLength",
             options: [
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "A medium path (2hrs)",
+                    goTo: 12,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "A long path (6hrs)",
+                    goTo: 13,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "A short path (30mins)",
+                    goTo: 12,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "A unmarked area (Unknown)",
+                    goTo: 14,
                 },
             ]
         },
         {
-            id: 0,
+            id: 12,
             class: "regularPage",
             requiredSelections: [],
-            page: "",
-            question: "",
-            selectionKey: "",
+            page: "You decide on a brisk loop you noticed on the map. It will take you past a small lake and hopefully you will spot some wildlife. You think maybe we should double check the weather before leaving the parking lot.",
+            question: "Do you?",
+            selectionKey: "weatherCheck",
             options: [
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "No. The weather seems good now.",
+                    goTo: 15,
                 },
                 {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
+                    title: "Yes. Better be safe.",
+                    goTo: 16,
                 },
             ]
         },

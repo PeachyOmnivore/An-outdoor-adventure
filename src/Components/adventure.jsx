@@ -3,8 +3,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { textRenderer } from "../client"
 
-
-let idArray = []
+const idArray = []
 
 export default function Adventure({ story, setStory }) {
 
@@ -38,23 +37,20 @@ export default function Adventure({ story, setStory }) {
             return
         }
         idArray.push(currentPage.id)
-        console.log(idArray)
+        console.log("IDARRAY",idArray)
     }, [currentPage])
 
 
-    useEffect(() => {
-        if (!currentPage || !story.selection[currentPage.selectionKey]) {
-            return
-        }
-        const answer = story.selection[currentPage.selectionKey]
-        console.log("ANSWER", answer)
+    // useEffect(() => {
+    //     if (!currentPage || !story.selection[currentPage.selectionKey]) {
+    //         return
+    //     }
+    //     const answer = story.selection[currentPage.selectionKey]
 
-        const selectedOption = currentPage.options.find((option) => option.title === answer)
-        populateStory(selectedOption.goTo)
+        // const selectedOption = currentPage.options.find((option) => option.title === answer)
+        // populateStory(selectedOption.goTo)
 
-    }, [currentPage, story, populateStory])
-
-    console.log(story.requiredSelections)
+    // }, [currentPage, story, populateStory])
 
     return currentPage && (
         <div className="page-container">

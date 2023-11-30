@@ -7,8 +7,8 @@ import { useState } from 'react'
 import { theStory } from './storyInformation'
 
 
-const savedStoryString  = localStorage.getItem("story")
-const savedStory = savedStoryString? JSON.parse(savedStoryString) : null
+const savedStoryString = localStorage.getItem("story")
+const savedStory = savedStoryString ? JSON.parse(savedStoryString) : null
 
 
 
@@ -22,18 +22,16 @@ function App() {
     localStorage.setItem("story", JSON.stringify(obj))
   }
 
-  const resetStory = () =>{
+  const resetStory = () => {
     localStorage.clear()
-    const updateStory = { ...story, selection: {},}
-        setStory(updateStory)
-
-    console.log("STORYSTATE",story)
+    const updateStory = { ...story, selection: {}, }
+    setStory(updateStory)
     navigate("/")
   }
 
   return (
     <>
-    <button onClick={resetStory} className='restart'>Restart Story</button>
+      <button onClick={resetStory} className='restart'>Restart Story</button>
       <Routes>
         <Route path='/' element={<StoryStart />} />
         <Route
@@ -48,7 +46,7 @@ function App() {
             <Adventure
               story={story}
               setStory={updateStory}
-               />} />
+            />} />
       </Routes>
     </>
   )
