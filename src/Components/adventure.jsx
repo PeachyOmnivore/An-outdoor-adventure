@@ -3,6 +3,9 @@ import { useCallback, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { textRenderer } from "../client"
 
+
+let idArray = []
+
 export default function Adventure({ story, setStory }) {
 
     const [currentPage, setCurrentPage] = useState()
@@ -30,6 +33,13 @@ export default function Adventure({ story, setStory }) {
         populateStory(1)
     }, [populateStory, currentPage])
 
+    useEffect(() => {
+        if (!currentPage) {
+            return
+        }
+        idArray.push(currentPage.id)
+        console.log(idArray)
+    }, [currentPage])
 
 
     useEffect(() => {

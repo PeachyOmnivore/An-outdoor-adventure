@@ -3,6 +3,7 @@ const theStory = {
     pages: [
         {
             id: 999,
+            class: "regularPage",
             requiredSelections: [],
             page: "This part of the story is not complete yet.",
             question: "Go back?",
@@ -20,8 +21,9 @@ const theStory = {
         },
         {
             id: 1,
+            class: "regularPage",
             requiredSelections: ["name"],
-            page: "Good morning {name}, you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall, over 1000 meter peaks. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
+            page: "Good morning {name}, you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall peaks over 1000 meters. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
             question: "You get yourself a cup of:",
             selectionKey: "drink",
             options: [
@@ -45,6 +47,7 @@ const theStory = {
         },
         {
             id: 2,
+            class: "regularPage",
             requiredSelections: ["drink"],
             page: "You enjoy your [drink] and start thinking about the day ahead of you. You woke up early with the plan to go on an adventure. But what will this adventure be?",
             question: " Where would you like to go and explore?",
@@ -70,8 +73,9 @@ const theStory = {
         },
         {
             id: 3,
+            class: "regularPage",
             requiredSelections: [],
-            page: "You decide that because of todays weather and also how earlier you've gotten up, that a trip into the mountains seems like the best course of action. No day in the mountains is a good idea alone. You remember you have some friends that might love a day in the mountains.",
+            page: "You decide that because of todays weather and also how early you've gotten up, that a trip into the mountains seems like the best course of action. No day in the mountains is a good idea alone. You remember you have some friends that might love a day in the mountains.",
             question: "Which friend would you like to ask to join you? ",
             selectionKey: "friend",
             options: [
@@ -95,8 +99,9 @@ const theStory = {
         },
         {
             id: 4,
+            class: "regularPage",
             requiredSelections: ["name", "friend"],
-            page: "You give your friend {friend} a call and to see what they are up to and they answer. 'Hey! [name], how are you doing? Beautiful day no?` You reply with a simple yet kind answer.",
+            page: "You give your friend {friend} a call and to see what they are up to and they answer. 'Hey {name}! How are you doing? Beautiful day no?' You reply with a simple yet kind answer.",
             question: "What do you say?",
             selectionKey: "mountainActivity",
             options: [
@@ -120,13 +125,14 @@ const theStory = {
         },
         {
             id: 5,
+            class: "regularPage",
             requiredSelections: ["friend"],
-            page: "[friend] responds with a simple. 'The day is looking great. Lets do it. Lets go for a hike! Where you feeling?'",
+            page: "{friend} responds with a simple 'The day is looking great. Lets do it. Lets go for a hike! Where are you feeling?'",
             question: "Where would you like to hike?",
             selectionKey: "hikeLocation",
             options: [
                 {
-                    title: "Lower woodland",
+                    title: "A Forest",
                     goTo: 6,
                 },
                 {
@@ -145,8 +151,9 @@ const theStory = {
         },
         {
             id: 6,
+            class: "regularPage",
             requiredSelections: ["friend"],
-            page: "'Nice one' [friend] say's. You tell [friend] to get packing with all the essentials and to be ready for a pick up in 20 minutes. You grab essentials like a map, compass, rucksack, extra layers and prepare to leave. Before you leave you grab your favourite adventure snack.",
+            page: "'Nice one' {friend} says. You tell {friend} to get packing with all the essentials and to be ready for a pick up in 20 minutes. You grab essentials like a map, compass, rucksack, extra layers and prepare to leave. Before you leave you grab your favourite adventure snack.",
             question: "Whats your favourite snack?",
             selectionKey: "snack",
             options: [
@@ -170,8 +177,208 @@ const theStory = {
         },
         {
             id: 7,
+            class: "regularPage",
+            requiredSelections: ["snack", "friend"],
+            page: "After grabbing your [snack], you grab the rest of your things and you head out to pick up {friend}. The weather is still looking good and you enjoy the drive over to {friend}'s",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "Continue",
+                    goTo: 8,
+                },
+            ]
+        },
+        {
+            id: 8,
+            class: "regularPage",
+            requiredSelections: ["friend", "hikeLocation"],
+            page: "You've arrived at {friend}'s and honk your cars horn. You yell out the window 'The days not getting any longer!' {friend} comes out from thier front door all packed and ready to go. They hop in the passenger seat and you make your way to the mountains with [hikeLocation] in mind.",
+            question: "You say to your friend:",
+            selectionKey: "friendSaying",
+            options: [
+                {
+                    title: "You look really pumped up for this!",
+                    goTo: 10,
+                },
+                {
+                    title: "Im going to beat you to the end of the trail.",
+                    goTo: 9,
+                },
+                {
+                    title: "You better not slow me down today.",
+                    goTo: 9,
+                },
+                {
+                    title: "I think we are going to have a splendid day!",
+                    goTo: 10,
+                },
+            ]
+        },
+        {
+            id: 9,
+            class: "regularPage",
+            requiredSelections: ["friend", "hikeLocation"],
+            page: "{friend} looks at you with a bit of a puzzled face and replies 'Yah right {name}, you know Im the champ in this car!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "Continue",
+                    goTo: 11,
+                },
+            ]
+        },
+        {
+            id: 10,
+            class: "regularPage",
+            requiredSelections: ["friend", "hikeLocation"],
+            page: "{friend} replies 'I think today is going to amazing!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "Continue",
+                    goTo: 11,
+                },
+                
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
             requiredSelections: [],
-            page: "After grabbing your [snack], you grab the rest of your things and you head out to pick up {friend}. The weather",
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
             question: "",
             selectionKey: "",
             options: [

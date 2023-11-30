@@ -7,5 +7,4 @@ const textRenderer = (string, selection, requiredSelections) => {
     requiredSelections.forEach(toChange => updatedString = updatedString.replaceAll(`|${toChange}|`, selection[toChange].toUpperCase()))
     return updatedString
 }
-
 export { textRenderer }
