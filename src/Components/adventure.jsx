@@ -53,13 +53,13 @@ export default function Adventure({ story, setStory }) {
     // }, [currentPage, story, populateStory])
 
     return currentPage && (
-        <div className="page-container">
+        <div className="page-container fadeInOne">
             <p>{textRenderer(currentPage.page, story.selection, currentPage.requiredSelections)}</p>
-            <h3 className="question fadeIn">{currentPage.question}</h3>
+            <h3 className="question fadeInTwo">{currentPage.question}</h3>
             <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input
-                        className="selections"
+                        className="selections fadeInTwo"
                         key={option.title}
                         type="button"
                         value={option.title}

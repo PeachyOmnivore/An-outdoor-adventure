@@ -12,6 +12,7 @@ body {
     place-items: center;
 }
 
+/* RESTART BUTTON */
 .restart {
     position: absolute;
     right: 40px;
@@ -25,36 +26,39 @@ body {
     color: red;
 }
 
+/* MAIN PARAGRAPH AND QUESTION */
 .page-container {
     display: grid;
     place-items: center;
+
     height: 350px;
     width: 600px;
+    padding: 80px;
 
     color: white;
-    background: radial-gradient( closest-side, rgba(255, 255, 255, 0.203),rgba(255, 255, 255, 0.197), rgb(0, 0, 0));
-    padding: 80px;
+    background: radial-gradient( closest-side, rgba(255, 224, 187, 0.203),rgba(250, 195, 127, 0.197), rgb(0, 0, 0));
     text-align: center;
     font-size: 30px;
+}
 
-    /* animation: 6s fadeIn;
+.fadeInOne {
+    animation: 6s fadeIn;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
+    animation-delay: 1s;
 
-    visibility: hidden; */
+    visibility: hidden;
 }
 
 .question {
     margin-top: 30px;
 }
 
-.options-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-top: 20px;
+/* START PAGE */
+.start-link {
+    text-decoration: none;
 }
 
+/* NAME INPUT PAGE */
 .name-input {
     color: white;
     background-color: rgb(114, 189, 242);
@@ -64,8 +68,13 @@ body {
     padding: 5px;
 }
 
-.start-link {
-    text-decoration: none;
+
+/* OPTION BUTTONS */
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20px;
 }
 
 .selections {
@@ -73,24 +82,36 @@ body {
     place-content: center;
 
     color: white;
-    background-color: rgba(255, 71, 4, 0.438);
+    font-weight: bold;
+    background-color: rgb(150, 68, 36);
+    border: none;
     border-radius: 10px;
     margin: 30px;
     height: 40px;
     padding: 10px;
+}
 
-    /* animation: 5s fadeIn;
+.fadeInTwo {
+    animation: 6s fadeIn;
     animation-fill-mode: forwards;
-    animation-delay: 5s;
+    animation-delay: 3s;
 
-    visibility: hidden; */
+    visibility: hidden;
 }
 
 .selections:hover{
     background-color: rgba(248, 77, 15, 0.571);
+    transform: scale(1.1);
 }
 
-/* @keyframes fadeIn {
+.selections:active {
+    background-color: rgba(0, 208, 255, 0.65);
+    transform: scale(1);
+}
+
+
+/* FADE IN */
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -99,4 +120,4 @@ body {
         visibility: visible;
         opacity: 1;
     }
-} */
+}
