@@ -21,6 +21,7 @@ export default function Adventure({ story, setStory }) {
 
         const result = story.pages.find(object => object.id === id)
         return setCurrentPage(result)
+
     }, [currentPage, story, setStory, navigate])
 
 
@@ -34,18 +35,21 @@ export default function Adventure({ story, setStory }) {
         if (!currentPage || !story.selection[currentPage.selectionKey]) {
             return
         }
+        
         const answer = story.selection[currentPage.selectionKey]
+        console.log("ANSWER",answer)
+
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         populateStory(selectedOption.goTo)
     }, [currentPage, story, populateStory])
 
-    console.log(currentPage)
+    console.log("CURRENT PAGE STATE", currentPage)
 
 
     return currentPage && (
         <div className="page-container">
             <p>{textRenderer(currentPage.page, story.selection)}</p>
-            <h3 className="question fadeIn">{textRenderer(currentPage.question, story.selection)}</h3>
+            <h3 className="question fadeIn">{currentPage.question}</h3>
             <div className="options-container">
                 {currentPage.options.map((option) => {
                     return <input

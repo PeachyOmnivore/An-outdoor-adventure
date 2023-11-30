@@ -27,13 +27,13 @@ function App() {
     const updateStory = { ...story, selection: {},}
         setStory(updateStory)
 
-    console.log(story)
+    console.log("STORYSTATE",story)
     navigate("/")
   }
 
   return (
     <>
-    <button onClick={resetStory}>Restart Story</button>
+    <button onClick={resetStory} className='restart'>Restart Story</button>
       <Routes>
         <Route path='/' element={<StoryStart />} />
         <Route
@@ -47,7 +47,8 @@ function App() {
           element={
             <Adventure
               story={story}
-              setStory={updateStory} />} />
+              setStory={updateStory}
+               />} />
       </Routes>
     </>
   )

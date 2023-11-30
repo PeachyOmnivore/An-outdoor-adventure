@@ -1,9 +1,11 @@
 
 const textRenderer = (string, selection) => {
     let updatedString = string
+
     updatedString = updatedString.replaceAll("[name]", selection.name)
-    updatedString = updatedString.replaceAll("[drink]", selection.drink)
-    updatedString = updatedString.replaceAll("[place]", selection.place)
+    updatedString = selection.drink? updatedString.replaceAll("[drink]", selection.drink.toLowerCase()): updatedString = updatedString.replaceAll("[drink]", selection.drink)
+    updatedString = selection.place? updatedString.replaceAll("[place]", selection.place.toLowerCase()): updatedString = updatedString.replaceAll("[place]", selection.place)
+    
     return updatedString
 }
 
@@ -11,6 +13,22 @@ const textRenderer = (string, selection) => {
 const theStory = {
     selection: {},
     pages: [
+        {
+            id: 999,
+            page: "This part of the story is not complete yet.",
+            question: "Go back?",
+            selectionKey: "",
+            options: [
+                {
+                    title: "Yes",
+                    goTo: "previous",
+                },
+                {
+                    title: "No, start over",
+                    goTo: "restart",
+                },
+            ]
+        },
         {
             id: 1,
             page: "Good morning [name], you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall, over 1000 meter peaks. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
@@ -47,15 +65,15 @@ const theStory = {
                 },
                 {
                     title: "The Ocean",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "The Town",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "Dont go out. Stay in",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -67,19 +85,19 @@ const theStory = {
             options: [
                 {
                     title: "Timothy",
-                    goTo: -1,
+                    goTo: 4,
                 },
                 {
                     title: "Jane",
-                    goTo: -1,
+                    goTo: 4,
                 },
                 {
                     title: "Xavier",
-                    goTo: -1,
+                    goTo: 4,
                 },
                 {
                     title: "Heather",
-                    goTo: -1,
+                    goTo: 4,
                 },
             ]
         },
@@ -87,47 +105,47 @@ const theStory = {
             id: 4,
             page: "You give your friend [friend] a call and to see what they are up to and they answer. 'Hey! [name], how are you doing? Beautiful day no?` You reply with a simple yet kind answer.",
             question: "What do you say?",
-            selectionKey: "MountainActivity",
+            selectionKey: "mountainActivity",
             options: [
                 {
                     title: "Great day for a hike! What do you say?",
-                    goTo: -1,
+                    goTo: 5,
                 },
                 {
                     title: "Im thinking 2 wheels and some dirt paths, eeeeh?",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "The rocks are calling our names",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "I see some snow in the gullies! You in!?",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
         {
             id: 5,
-            page: "",
-            question: "",
-            selectionKey: "",
+            page: "[friend] responds with a simple. 'The day is looking great. Lets do it. Lets go for a hike! What location?'",
+            question: "Where would you like to hike?",
+            selectionKey: "hikeLocation",
             options: [
                 {
-                    title: "",
-                    goTo: -1,
+                    title: "Lower woodland",
+                    goTo: 999,
                 },
                 {
-                    title: "",
-                    goTo: -1,
+                    title: "A long Glen",
+                    goTo: 999,
                 },
                 {
-                    title: "",
-                    goTo: -1,
+                    title: "A Summit",
+                    goTo: 999,
                 },
                 {
-                    title: "",
-                    goTo: -1,
+                    title: "A River",
+                    goTo: 999,
                 },
             ]
         },
@@ -139,19 +157,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -163,19 +181,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -187,19 +205,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -211,19 +229,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -235,19 +253,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -259,19 +277,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
@@ -283,19 +301,19 @@ const theStory = {
             options: [
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
                 {
                     title: "",
-                    goTo: -1,
+                    goTo: 999,
                 },
             ]
         },
