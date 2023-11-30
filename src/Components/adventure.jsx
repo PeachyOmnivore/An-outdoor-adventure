@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { textRenderer } from "../storyInformation"
+import { textRenderer } from "../client"
 
 export default function Adventure({ story, setStory }) {
 
@@ -31,24 +31,24 @@ export default function Adventure({ story, setStory }) {
     }, [populateStory, currentPage])
 
 
+
     useEffect(() => {
         if (!currentPage || !story.selection[currentPage.selectionKey]) {
             return
         }
-        
         const answer = story.selection[currentPage.selectionKey]
-        console.log("ANSWER",answer)
+        console.log("ANSWER", answer)
 
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         populateStory(selectedOption.goTo)
+
     }, [currentPage, story, populateStory])
 
-    console.log("CURRENT PAGE STATE", currentPage)
-
+    console.log(story.requiredSelections)
 
     return currentPage && (
         <div className="page-container">
-            <p>{textRenderer(currentPage.page, story.selection)}</p>
+            <p>{textRenderer(currentPage.page, story.selection, currentPage.requiredSelections)}</p>
             <h3 className="question fadeIn">{currentPage.question}</h3>
             <div className="options-container">
                 {currentPage.options.map((option) => {

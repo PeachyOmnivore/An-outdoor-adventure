@@ -1,20 +1,9 @@
-
-const textRenderer = (string, selection) => {
-    let updatedString = string
-
-    updatedString = updatedString.replaceAll("[name]", selection.name)
-    updatedString = selection.drink? updatedString.replaceAll("[drink]", selection.drink.toLowerCase()): updatedString = updatedString.replaceAll("[drink]", selection.drink)
-    updatedString = selection.place? updatedString.replaceAll("[place]", selection.place.toLowerCase()): updatedString = updatedString.replaceAll("[place]", selection.place)
-    
-    return updatedString
-}
-
-
 const theStory = {
     selection: {},
     pages: [
         {
             id: 999,
+            requiredSelections: [],
             page: "This part of the story is not complete yet.",
             question: "Go back?",
             selectionKey: "",
@@ -31,7 +20,8 @@ const theStory = {
         },
         {
             id: 1,
-            page: "Good morning [name], you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall, over 1000 meter peaks. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
+            requiredSelections: ["name"],
+            page: "Good morning {name}, you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall, over 1000 meter peaks. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
             question: "You get yourself a cup of:",
             selectionKey: "drink",
             options: [
@@ -55,6 +45,7 @@ const theStory = {
         },
         {
             id: 2,
+            requiredSelections: ["drink"],
             page: "You enjoy your [drink] and start thinking about the day ahead of you. You woke up early with the plan to go on an adventure. But what will this adventure be?",
             question: " Where would you like to go and explore?",
             selectionKey: "place",
@@ -79,6 +70,7 @@ const theStory = {
         },
         {
             id: 3,
+            requiredSelections: [],
             page: "You decide that because of todays weather and also how earlier you've gotten up, that a trip into the mountains seems like the best course of action. No day in the mountains is a good idea alone. You remember you have some friends that might love a day in the mountains.",
             question: "Which friend would you like to ask to join you? ",
             selectionKey: "friend",
@@ -103,7 +95,8 @@ const theStory = {
         },
         {
             id: 4,
-            page: "You give your friend [friend] a call and to see what they are up to and they answer. 'Hey! [name], how are you doing? Beautiful day no?` You reply with a simple yet kind answer.",
+            requiredSelections: ["name", "friend"],
+            page: "You give your friend {friend} a call and to see what they are up to and they answer. 'Hey! [name], how are you doing? Beautiful day no?` You reply with a simple yet kind answer.",
             question: "What do you say?",
             selectionKey: "mountainActivity",
             options: [
@@ -127,13 +120,14 @@ const theStory = {
         },
         {
             id: 5,
-            page: "[friend] responds with a simple. 'The day is looking great. Lets do it. Lets go for a hike! What location?'",
+            requiredSelections: ["friend"],
+            page: "[friend] responds with a simple. 'The day is looking great. Lets do it. Lets go for a hike! Where you feeling?'",
             question: "Where would you like to hike?",
             selectionKey: "hikeLocation",
             options: [
                 {
                     title: "Lower woodland",
-                    goTo: 999,
+                    goTo: 6,
                 },
                 {
                     title: "A long Glen",
@@ -151,31 +145,33 @@ const theStory = {
         },
         {
             id: 6,
-            page: "",
-            question: "",
-            selectionKey: "",
+            requiredSelections: ["friend"],
+            page: "'Nice one' [friend] say's. You tell [friend] to get packing with all the essentials and to be ready for a pick up in 20 minutes. You grab essentials like a map, compass, rucksack, extra layers and prepare to leave. Before you leave you grab your favourite adventure snack.",
+            question: "Whats your favourite snack?",
+            selectionKey: "snack",
             options: [
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "Trail mix",
+                    goTo: 7,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "Dried Fruit",
+                    goTo: 7,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "Werthers Originals",
+                    goTo: 7,
                 },
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "Chocolates",
+                    goTo: 7,
                 },
             ]
         },
         {
             id: 7,
-            page: "",
+            requiredSelections: [],
+            page: "After grabbing your [snack], you grab the rest of your things and you head out to pick up {friend}. The weather",
             question: "",
             selectionKey: "",
             options: [
@@ -197,130 +193,10 @@ const theStory = {
                 },
             ]
         },
-        {
-            id: 8,
-            page: "",
-            question: "",
-            selectionKey: "",
-            options: [
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-            ]
-        },
-        {
-            id: 9,
-            page: "",
-            question: "",
-            selectionKey: "",
-            options: [
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-            ]
-        },
-        {
-            id: 10,
-            page: "",
-            question: "",
-            selectionKey: "",
-            options: [
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-            ]
-        },
-        {
-            id: 11,
-            page: "",
-            question: "",
-            selectionKey: "",
-            options: [
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-            ]
-        },
-        {
-            id: 12,
-            page: "",
-            question: "",
-            selectionKey: "",
-            options: [
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-            ]
-        },
-
+        
     ]
 };
 
 
 
-export { theStory, textRenderer }
+export { theStory }
