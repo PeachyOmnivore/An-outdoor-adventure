@@ -24,7 +24,7 @@ export default function Name({ setStory, story }) {
 
     return (
         <>
-            <form onSubmit={(event) => handleSubmit(event)} className="page-container" action="">
+            <form onSubmit={(event) => handleSubmit(event)} className="startAndName fadeInOne" action="">
                 <label>What is your name, adventurer?</label>
                 <input
                     className="name-input"
@@ -34,7 +34,7 @@ export default function Name({ setStory, story }) {
                 />
                 <button
                     type="submit"
-                    className="selections">
+                    className="selections fadeInTwo">
                     Wake up
                 </button>
             </form>

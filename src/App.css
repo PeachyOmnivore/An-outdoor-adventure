@@ -9,7 +9,7 @@ body {
     width: 100vw;
     background-color: black;
     display: grid;
-    place-items: center;
+    place-content: center;
 }
 
 /* RESTART BUTTON */
@@ -26,11 +26,24 @@ body {
     color: red;
 }
 
+/* FIRST AND SECOND PAGE */
+.startAndName {
+display: grid;
+place-items: center;
+
+height: 350px;
+width: 600px;
+padding: 80px;
+
+color: white;
+background: radial-gradient( closest-side, rgba(255, 224, 187, 0.203),rgba(250, 195, 127, 0.197), rgb(0, 0, 0));
+text-align: center;
+font-size: 30px;
+
+}
+
 /* MAIN PARAGRAPH AND QUESTION */
 .page-container {
-    display: grid;
-    place-items: center;
-
     height: 350px;
     width: 600px;
     padding: 80px;
@@ -65,6 +78,7 @@ body {
     border: 2px solid white;
     border-radius: 10px;
     height: 30px;
+    width: 200px;
     padding: 5px;
 }
 
@@ -72,8 +86,8 @@ body {
 /* OPTION BUTTONS */
 .options-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+    grid-template-rows: repeat(auto-fit, minmax(50px, 100px));
     margin-top: 20px;
 }
 
@@ -86,7 +100,7 @@ body {
     background-color: rgb(150, 68, 36);
     border: none;
     border-radius: 10px;
-    margin: 30px;
+    margin: 10px;
     height: 40px;
     padding: 10px;
 }
