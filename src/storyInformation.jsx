@@ -6,16 +6,16 @@ const theStory = {
             class: "regularPage",
             requiredSelections: [],
             page: "This part of the story is not complete yet.",
-            question: "Go back?",
+            question: "",
             selectionKey: "",
             options: [
                 {
-                    title: "Yes",
-                    goTo: "previous",
+                    title: "No",
+                    goTo: -1,
                 },
                 {
-                    title: "No, start over",
-                    goTo: "restart",
+                    title: "No!",
+                    goTo: -1,
                 },
             ]
         },
@@ -110,7 +110,7 @@ const theStory = {
                     goTo: 5,
                 },
                 {
-                    title: "Im thinking 2 wheels and some dirt paths, eeeeh?",
+                    title: "Two wheels and some dirt paths?",
                     goTo: 999,
                 },
                 {

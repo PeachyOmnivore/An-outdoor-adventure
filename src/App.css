@@ -2,6 +2,8 @@
     font-family: 'Playfair Display', serif;
     margin: 0px;
     padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -44,7 +46,7 @@ font-size: 30px;
 
 /* MAIN PARAGRAPH AND QUESTION */
 .page-container {
-    height: 350px;
+    /* height: 300px; */
     width: 600px;
     padding: 80px;
 

@@ -44,6 +44,7 @@ function App() {
             <Adventure
               story={story}
               setStory={updateStory}
+              resetStory = {resetStory}
             />} />
       </Routes>
     </>

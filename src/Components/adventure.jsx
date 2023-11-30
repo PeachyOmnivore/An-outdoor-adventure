@@ -5,7 +5,7 @@ import { textRenderer } from "../client"
 
 const idArray = []
 
-export default function Adventure({ story, setStory }) {
+export default function Adventure({ story, setStory, resetStory}) {
 
     const [currentPage, setCurrentPage] = useState()
     const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default function Adventure({ story, setStory }) {
         }
 
         if (id === -1) {
-            navigate("/")
+            resetStory()
             return
         }
 
@@ -46,8 +46,9 @@ export default function Adventure({ story, setStory }) {
         if (!currentPage || !story.selection[currentPage.selectionKey]) {
             return
         }
-        const answer = story.selection[currentPage.selectionKey]
 
+        const answer = story.selection[currentPage.selectionKey]
+        console.log("ANSWER" ,answer)
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         console.log("selectedOptions", selectedOption)
         populateStory(selectedOption.goTo)
