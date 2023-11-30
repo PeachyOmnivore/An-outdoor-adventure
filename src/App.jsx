@@ -10,8 +10,6 @@ import { theStory } from './storyInformation'
 const savedStoryString = localStorage.getItem("story")
 const savedStory = savedStoryString ? JSON.parse(savedStoryString) : null
 
-
-
 function App() {
 
   const [story, setStory] = useState(savedStory || theStory)

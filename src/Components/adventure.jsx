@@ -9,6 +9,7 @@ export default function Adventure({ story, setStory }) {
 
     const [currentPage, setCurrentPage] = useState()
     const navigate = useNavigate()
+    console.log(story)
 
     const populateStory = useCallback((id, answer = null) => {
         if (answer && currentPage) {
@@ -41,16 +42,18 @@ export default function Adventure({ story, setStory }) {
     }, [currentPage])
 
 
-    // useEffect(() => {
-    //     if (!currentPage || !story.selection[currentPage.selectionKey]) {
-    //         return
-    //     }
-    //     const answer = story.selection[currentPage.selectionKey]
+    useEffect(() => {
+        if (!currentPage || !story.selection[currentPage.selectionKey]) {
+            return
+        }
+        const answer = story.selection[currentPage.selectionKey]
 
-        // const selectedOption = currentPage.options.find((option) => option.title === answer)
-        // populateStory(selectedOption.goTo)
+        const selectedOption = currentPage.options.find((option) => option.title === answer)
+        console.log("selectedOptions", selectedOption)
+        populateStory(selectedOption.goTo)
 
-    // }, [currentPage, story, populateStory])
+    }, [currentPage, story, populateStory])
+
 
     return currentPage && (
         <div className="page-container fadeInOne">
