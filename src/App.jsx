@@ -32,7 +32,7 @@ function App() {
     <>
       <button onClick={resetStory} className='restart'>Restart Story</button>
       <Routes>
-        <Route path='/' element={<StoryStart />} />
+        <Route path='/' element={<StoryStart story={story}/>} />
         <Route
           path='/Name'
           element={
