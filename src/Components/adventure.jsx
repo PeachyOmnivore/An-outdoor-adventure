@@ -80,7 +80,7 @@ export default function Adventure({ story, setStory, resetStory }) {
                     })}
                 </div>
             </div>
-            <Link to="/Selections"><button>Your Selections</button></Link>
+            <Link  to="/Selections"><button className="yourSelections">Your Selections</button></Link>
         </>
     )
 }
