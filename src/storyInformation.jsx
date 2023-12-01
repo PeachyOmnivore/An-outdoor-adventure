@@ -218,7 +218,7 @@ const theStory = {
         {
             id: 9,
             class: "regularPage",
-            requiredSelections: ["friend", "hikeLocation"],
+            requiredSelections: ["friend", "hikeLocation", "name"],
             page: "{friend} looks at you with a bit of a puzzled face and replies 'Yah right {name}, you know Im the champ in this car!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
             selectionKey: "rivalResponse",
