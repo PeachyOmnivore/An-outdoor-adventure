@@ -221,7 +221,7 @@ const theStory = {
             requiredSelections: ["friend", "hikeLocation"],
             page: "{friend} looks at you with a bit of a puzzled face and replies 'Yah right {name}, you know Im the champ in this car!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
-            selectionKey: "",
+            selectionKey: "rivalResponse",
             options: [
                 {
                     title: "Continue",
@@ -235,7 +235,7 @@ const theStory = {
             requiredSelections: ["friend", "hikeLocation"],
             page: "{friend} replies 'I think today is going to amazing!' You then proceed to drive down the road towards your destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
-            selectionKey: "",
+            selectionKey: "niceResponse",
             options: [
                 {
                     title: "Continue",
@@ -280,68 +280,48 @@ const theStory = {
             options: [
                 {
                     title: "No. The weather seems good now.",
-                    goTo: 15,
+                    goTo: 13,
                 },
                 {
                     title: "Yes. Better be safe.",
-                    goTo: 16,
+                    goTo: 999,
                 },
             ]
         },
         {
-            id: 0,
+            id: 13,
             class: "regularPage",
-            requiredSelections: [],
-            page: "",
+            requiredSelections: ["friend"],
+            page: "After looking at the map and grabbing your gear you and {friend} head out on your walk. The wind whistles in the trees and you hear cracking branches in the distance. Almost like there are little forest creatures playing around. The air smells fresh and with a scent of pine. The trail is well marked and fairly smooth and flat. You think to yourself this will be a nice walk.",
             question: "",
-            selectionKey: "",
+            selectionKey: "walkStart",
             options: [
                 {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
+                    title: "Continue",
+                    goTo: 14,
                 },
             ]
         },
         {
-            id: 0,
+            id: 14,
             class: "regularPage",
-            requiredSelections: [],
-            page: "",
-            question: "",
-            selectionKey: "",
+            requiredSelections: ["friend"],
+            page: "As yourself and {friend} continue you notice some wild deer prancing in the woods. They seem to be moving fast and {friend} says 'Wow, look at them go! They are heading in the opposite direction from you. You head deeper and deeper into this trail and eventually find yourself at the lake that was waymarked on the map. You and {friend} take a break and have a seat on some rocks next to the lake",
+            question: "Do you?",
+            selectionKey: "lakeBreak",
             options: [
                 {
-                    title: "",
-                    goTo: 999,
+                    title: "Have your snack",
+                    goTo: 15,
                 },
                 {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
-                    goTo: 999,
-                },
-                {
-                    title: "",
+                    title: "Dont have your snack",
                     goTo: 999,
                 },
             ]
         },
         {
-            id: 0,
+            id: 15,
             class: "regularPage",
             requiredSelections: [],
             page: "",

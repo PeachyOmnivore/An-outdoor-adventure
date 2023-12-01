@@ -54,7 +54,7 @@ export default function Adventure({ story, setStory, resetStory }) {
         }
 
         const answer = story.selection[currentPage.selectionKey]
-        console.log("ANSWER", answer)
+        
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         console.log("selectedOptions", selectedOption)
         populateStory(selectedOption.goTo)
