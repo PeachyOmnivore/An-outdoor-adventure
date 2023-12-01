@@ -49,7 +49,7 @@ function App() {
             />
             <Route 
             path='/Selections'
-            element= {<Selections story={story}/>}
+            element= {<Selections navigate = {navigate} story={story}/>}
             />
       </Routes>
     </>

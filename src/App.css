@@ -55,13 +55,13 @@ font-size: 30px;
     font-size: 30px;
 }
 
-.fadeInOne {
+/* .fadeInOne {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 1s;
 
     visibility: hidden;
-}
+} */
 
 .question {
     margin-top: 30px;
@@ -107,13 +107,13 @@ font-size: 30px;
     padding: 10px;
 }
 
-.fadeInTwo {
+/* .fadeInTwo {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 3s;
 
     visibility: hidden;
-}
+} */
 
 .selections:hover{
     background-color: rgba(248, 77, 15, 0.571);
@@ -135,18 +135,41 @@ font-size: 30px;
     transition: all 200ms;
 }
 
-.selectionItems{
-    list-style: none;
-    margin-top: 10px;
-}
-
 .selectionsPage:hover {
     transform: scale(1.06);
     box-shadow: rgba(246, 182, 62, 0.542) 0px 0px 80px;
 }
 
+.selectionsPage h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+.returnButton {
+    position: relative;
+    top: 20px;
+    left: 70px;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.203);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.returnButton:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(246, 182, 62, 0.542) 0px 0px 20px;
+}
+
+.selectionItems{
+    list-style: none;
+    margin-top: 10px;
+}
+
+
 /* FADE IN */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -155,4 +178,4 @@ font-size: 30px;
         visibility: visible;
         opacity: 1;
     }
-}
+} */

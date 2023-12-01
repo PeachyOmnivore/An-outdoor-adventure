@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
-
-export default function Selections({ story }) {
+export default function Selections({ story, navigate }) {
 
     console.log(story.selection)
 
@@ -18,6 +17,9 @@ export default function Selections({ story }) {
                     ))}
                 </ul>
             </div>
+            
+                <button className="returnButton" onClick={() => (navigate("/Adventure"))}>Return to your Adventure</button>
+            
         </>
     )
 }
