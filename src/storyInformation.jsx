@@ -67,7 +67,7 @@ const theStory = {
                 },
                 {
                     title: "Dont go out. Stay in",
-                    goTo: 999,
+                    goTo: 15,
                 },
             ]
         },
@@ -312,7 +312,7 @@ const theStory = {
             options: [
                 {
                     title: "Have your snack",
-                    goTo: 15,
+                    goTo: 999,
                 },
                 {
                     title: "Dont have your snack",
@@ -322,6 +322,344 @@ const theStory = {
         },
         {
             id: 15,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "You decide, as much as the weather looks great, that today you really want to catch up on things and take a load off. 'Heck' you say. 'I'm going to have an indoor day!'",
+            question: "What do you do first?",
+            selectionKey: "indoorDoFirst",
+            options: [
+                {
+                    title: "Sit on the couch",
+                    goTo: 16,
+                },
+                {
+                    title: "Go wash dishes",
+                    goTo: 999,
+                },
+                {
+                    title: "Hop on your computer",
+                    goTo: 999,
+                },
+                {
+                    title: "Do some exercising",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 16,
+            class: "regularPage",
+            requiredSelections: ["drink"],
+            page: "You take your cup with what remaining [drink] is left and sit on the couch. You grab your television remote and turn on the TV. 'hmm' you ponder.  ",
+            question: "What should you watch?",
+            selectionKey: "TVShow",
+            options: [
+                {
+                    title: "A Reality Show",
+                    goTo: 17,
+                },
+                {
+                    title: "A Loch Ness Monster Documentary",
+                    goTo: 17,
+                },
+                {
+                    title: "A Football Game",
+                    goTo: 17,
+                },
+                {
+                    title: "A Cartoon",
+                    goTo: 17,
+                },
+            ]
+        },
+        {
+            id: 17,
+            class: "regularPage",
+            requiredSelections: ["TVShow", "drink"],
+            page: "You turn the channel to [TVShow] and get comfortable. Sipping on your [drink]",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
+            class: "regularPage",
+            requiredSelections: [],
+            page: "",
+            question: "",
+            selectionKey: "",
+            options: [
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+                {
+                    title: "",
+                    goTo: 999,
+                },
+            ]
+        },
+        {
+            id: 0,
             class: "regularPage",
             requiredSelections: [],
             page: "",
