@@ -6,7 +6,7 @@ const theStory = {
             class: "regularPage",
             requiredSelections: [],
             page: "This part of the story is not complete yet.",
-            question: "",
+            question: "Go back?",
             selectionKey: "",
             options: [
                 {

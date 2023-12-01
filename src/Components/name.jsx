@@ -25,7 +25,7 @@ export default function Name({ setStory, story }) {
     return (
         <>
             <form onSubmit={(event) => handleSubmit(event)} className="startAndName fadeInOne" action="">
-                <label>What is your name, adventurer?</label>
+                <label>What is your name, explorer?</label>
                 <input
                     className="name-input"
                     type="text"
