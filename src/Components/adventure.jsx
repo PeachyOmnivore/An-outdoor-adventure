@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { textRenderer } from "../client"
 
 const idArray = []
 
-export default function Adventure({ story, setStory, resetStory}) {
+export default function Adventure({ story, setStory, resetStory }) {
 
     const [currentPage, setCurrentPage] = useState()
-    const navigate = useNavigate()
+
     console.log(story)
 
     const populateStory = useCallback((id, answer = null) => {
@@ -25,7 +24,7 @@ export default function Adventure({ story, setStory, resetStory}) {
         const result = story.pages.find(object => object.id === id)
         return setCurrentPage(result)
 
-    }, [currentPage, story, setStory, navigate])
+    }, [currentPage, story, setStory, resetStory])
 
 
     useEffect(() => {
@@ -38,7 +37,7 @@ export default function Adventure({ story, setStory, resetStory}) {
             return
         }
         idArray.push(currentPage.id)
-        console.log("IDARRAY",idArray)
+        console.log("IDARRAY", idArray)
     }, [currentPage])
 
 
@@ -48,7 +47,7 @@ export default function Adventure({ story, setStory, resetStory}) {
         }
 
         const answer = story.selection[currentPage.selectionKey]
-        console.log("ANSWER" ,answer)
+        console.log("ANSWER", answer)
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         console.log("selectedOptions", selectedOption)
         populateStory(selectedOption.goTo)
