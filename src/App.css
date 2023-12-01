@@ -46,7 +46,6 @@ font-size: 30px;
 
 /* MAIN PARAGRAPH AND QUESTION */
 .page-container {
-    /* height: 300px; */
     width: 600px;
     padding: 80px;
 
@@ -56,13 +55,13 @@ font-size: 30px;
     font-size: 30px;
 }
 
-/* .fadeInOne {
+.fadeInOne {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 1s;
 
     visibility: hidden;
-} */
+}
 
 .question {
     margin-top: 30px;
@@ -108,13 +107,13 @@ font-size: 30px;
     padding: 10px;
 }
 
-/* .fadeInTwo {
+.fadeInTwo {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 3s;
 
     visibility: hidden;
-} */
+}
 
 .selections:hover{
     background-color: rgba(248, 77, 15, 0.571);
@@ -126,9 +125,28 @@ font-size: 30px;
     transform: scale(1);
 }
 
+/* SELECTIONS PAGE */
+.selectionsPage{
+    color: white;
+    background-color: rgba(128, 128, 128, 0.145);
+    padding: 20px;
+    border: grey solid 2px;
+    border-radius: 25px;
+    transition: all 200ms;
+}
+
+.selectionItems{
+    list-style: none;
+    margin-top: 10px;
+}
+
+.selectionsPage:hover {
+    transform: scale(1.06);
+    box-shadow: rgba(246, 182, 62, 0.542) 0px 0px 80px;
+}
 
 /* FADE IN */
-/* @keyframes fadeIn {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -137,4 +155,4 @@ font-size: 30px;
         visibility: visible;
         opacity: 1;
     }
-} */
+}

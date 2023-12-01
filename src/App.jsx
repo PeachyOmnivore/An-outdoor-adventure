@@ -1,6 +1,7 @@
 import './App.css'
-import StoryStart from './Components/storyStart'
-import Adventure from './Components/adventure'
+import StoryStart from './Components/storyStart.jsx'
+import Adventure from './Components/adventure.jsx'
+import Selections from './Components/selections.jsx'
 import Name from './Components/name'
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState } from 'react'
@@ -44,8 +45,12 @@ function App() {
             <Adventure
               story={story}
               setStory={updateStory}
-              resetStory = {resetStory}
-            />} />
+              resetStory = {resetStory}/>} 
+            />
+            <Route 
+            path='/Selections'
+            element= {<Selections story={story}/>}
+            />
       </Routes>
     </>
   )

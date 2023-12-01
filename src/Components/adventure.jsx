@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react"
 import { textRenderer } from "../client"
+import { Link } from "react-router-dom"
 
 const idArray = []
 
 export default function Adventure({ story, setStory, resetStory }) {
 
     const [currentPage, setCurrentPage] = useState()
+    const [pageText, setPageText] = useState()
 
     console.log(story)
 
@@ -42,6 +44,11 @@ export default function Adventure({ story, setStory, resetStory }) {
 
 
     useEffect(() => {
+        if (currentPage) {
+            const newText = textRenderer(currentPage.page, story.selection, currentPage.requiredSelections)
+            setPageText(newText)
+        }
+        
         if (!currentPage || !story.selection[currentPage.selectionKey]) {
             return
         }
@@ -55,22 +62,25 @@ export default function Adventure({ story, setStory, resetStory }) {
     }, [currentPage, story, populateStory])
 
 
-    return currentPage && (
-        <div className="page-container fadeInOne">
-            <p>{textRenderer(currentPage.page, story.selection, currentPage.requiredSelections)}</p>
-            <h3 className="question fadeInTwo">{currentPage.question}</h3>
-            <div className="options-container">
-                {currentPage.options.map((option) => {
-                    return <input
-                        className="selections fadeInTwo"
-                        key={option.title}
-                        type="button"
-                        value={option.title}
-                        name={option.goTo}
-                        onClick={() => { populateStory(option.goTo, option.title) }}
-                    />
-                })}
+    return currentPage && pageText && (
+        <>
+            <div className="page-container">
+                <p className="fadeInOne">{pageText}</p>
+                <h3 className="question fadeInTwo">{currentPage.question}</h3>
+                <div className="options-container">
+                    {currentPage.options.map((option) => {
+                        return <input
+                            className="selections fadeInTwo"
+                            key={option.title}
+                            type="button"
+                            value={option.title}
+                            name={option.goTo}
+                            onClick={() => { populateStory(option.goTo, option.title) }}
+                        />
+                    })}
+                </div>
             </div>
-        </div>
+            <Link to="/Selections"><button>Your Selections</button></Link>
+        </>
     )
 }

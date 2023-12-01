@@ -247,7 +247,7 @@ const theStory = {
         {
             id: 11,
             class: "regularPage",
-            requiredSelections: [],
+            requiredSelections: ["friend"],
             page: "'Ah what a nice smell. The forest always brings me joy' says {friend}. 'Lets look at a map' You ask. Given for the amount of time you have, you should be able to fit in a moderate hike",
             question: "Point towards:",
             selectionKey: "hikeLength",
