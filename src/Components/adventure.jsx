@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react"
-import { textRenderer } from "../client"
+import { textRenderer, toggleMute } from "../client"
 import { Link } from "react-router-dom"
 
 const idArray = []
@@ -22,6 +22,7 @@ export default function Adventure({ story, setStory, resetStory }) {
         }
 
         const result = story.pages.find(object => object.id === id)
+
         return setCurrentPage(result)
 
     }, [currentPage, story, setStory, resetStory])
@@ -46,21 +47,21 @@ export default function Adventure({ story, setStory, resetStory }) {
             const newText = textRenderer(currentPage.page, story.selection, currentPage.requiredSelections)
             setPageText(newText)
         }
-        
+
         if (!currentPage || !story.selection[currentPage.selectionKey]) {
             return
         }
 
         const answer = story.selection[currentPage.selectionKey]
-        
+
         const selectedOption = currentPage.options.find((option) => option.title === answer)
         console.log("selectedOptions", selectedOption)
         populateStory(selectedOption.goTo)
 
         console.log(currentPage.class)
     }, [currentPage, story, populateStory])
-    
-    
+
+
     return currentPage && pageText && (
         <>
             <div className={currentPage.class}>
@@ -80,7 +81,8 @@ export default function Adventure({ story, setStory, resetStory }) {
                     })}
                 </div>
             </div>
-            <Link  to="/Selections"><button className="yourSelections">Your Selections</button></Link>
+            {/* <button onClick={() => toggleMute(pageAudio)}>Mute</button> */}
+            <Link to="/Selections"><button className="yourSelections">Your Selections</button></Link>
         </>
     )
 }

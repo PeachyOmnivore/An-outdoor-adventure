@@ -7,4 +7,11 @@ const textRenderer = (string, selection, requiredSelections) => {
     requiredSelections.forEach(toChange => updatedString = updatedString.replaceAll(`|${toChange}|`, selection[toChange].toUpperCase()))
     return updatedString
 }
-export { textRenderer }
+
+const toggleMute = (audio) => {
+    const pageAudio = audio
+    pageAudio.muted = !pageAudio.muted;
+}
+
+
+export { textRenderer, toggleMute }
