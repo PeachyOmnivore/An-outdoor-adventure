@@ -41,13 +41,23 @@ body {
     font-size: 30px;
 }
 
-.fadeInOne {
+.page-container-forest {
+    width: 600px;
+    padding: 80px;
+
+    color: white;
+    background: radial-gradient(closest-side, rgba(3, 57, 7, 0.574), rgba(3, 57, 7, 0.58), rgb(0, 0, 0));
+    text-align: center;
+    font-size: 30px;
+}
+
+/* .fadeInOne {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 1s;
 
     visibility: hidden;
-}
+} */
 
 .question {
     margin-top: 30px;
@@ -93,13 +103,13 @@ body {
     padding: 10px;
 }
 
-.fadeInTwo {
+/* .fadeInTwo {
     animation: 6s fadeIn;
     animation-fill-mode: forwards;
     animation-delay: 3s;
 
     visibility: hidden;
-}
+} */
 
 .selections:hover {
     background-color: rgba(248, 77, 15, 0.571);

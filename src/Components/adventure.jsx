@@ -10,8 +10,6 @@ export default function Adventure({ story, setStory, resetStory }) {
     const [currentPage, setCurrentPage] = useState()
     const [pageText, setPageText] = useState()
 
-    console.log(story)
-
     const populateStory = useCallback((id, answer = null) => {
         if (answer && currentPage) {
             const updateStory = { ...story, selection: { ...story.selection, [currentPage.selectionKey]: answer } }
@@ -59,12 +57,14 @@ export default function Adventure({ story, setStory, resetStory }) {
         console.log("selectedOptions", selectedOption)
         populateStory(selectedOption.goTo)
 
+        console.log(currentPage.class)
     }, [currentPage, story, populateStory])
-
-
+    
+    
     return currentPage && pageText && (
         <>
-            <div className="page-container">
+            <div className={currentPage.class}>
+                <audio autoPlay loop src={currentPage.audio}></audio>
                 <p className="fadeInOne">{pageText}</p>
                 <h3 className="question fadeInTwo">{currentPage.question}</h3>
                 <div className="options-container">

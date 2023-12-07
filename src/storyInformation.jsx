@@ -3,7 +3,8 @@ const theStory = {
     pages: [
         {
             id: 999,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "This part of the story is not complete yet.",
             question: "Go back?",
@@ -21,7 +22,8 @@ const theStory = {
         },
         {
             id: 1,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["name"],
             page: "Good morning {name}, you awake in your bed in a small sleepy town called Revermere. This small town sits in a lovely wooded glen right next to the ocean and tall peaks over 1000 meters. A perfect location for any avid outdoor enthusiast. You get out of bed, get dressed and make your way to your kitchen to grab a beverage. ",
             question: "You get yourself a cup of:",
@@ -47,7 +49,8 @@ const theStory = {
         },
         {
             id: 2,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["drink"],
             page: "You enjoy your [drink] and start thinking about the day ahead of you. You woke up early with the plan to go on an adventure. But what will this adventure be?",
             question: " Where would you like to go and explore?",
@@ -73,7 +76,8 @@ const theStory = {
         },
         {
             id: 3,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "You decide that because of todays weather and also how early you've gotten up, that a trip into the mountains seems like the best course of action. No day in the mountains is a good idea alone. You remember you have some friends that might love a day in the mountains.",
             question: "Which friend would you like to ask to join you? ",
@@ -99,7 +103,8 @@ const theStory = {
         },
         {
             id: 4,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["name", "friend"],
             page: "You give your friend {friend} a call and to see what they are up to and they answer. 'Hey {name}! How are you doing? Beautiful day no?' You reply with a simple yet kind answer.",
             question: "What do you say?",
@@ -125,7 +130,8 @@ const theStory = {
         },
         {
             id: 5,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["friend"],
             page: "{friend} responds with a simple 'The day is looking great. Lets do it. Lets go for a hike! Where are you feeling?'",
             question: "Where would you like to hike?",
@@ -151,7 +157,8 @@ const theStory = {
         },
         {
             id: 6,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["friend"],
             page: "'Nice one' {friend} says. You tell {friend} to get packing with all the essentials and to be ready for a pick up in 20 minutes. You grab essentials like a map, compass, rucksack, extra layers and prepare to leave. Before you leave you grab your favourite adventure snack.",
             question: "Whats your favourite snack?",
@@ -177,7 +184,8 @@ const theStory = {
         },
         {
             id: 7,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["snack", "friend"],
             page: "After grabbing your [snack], you grab the rest of your things and you head out to pick up {friend}. The weather is still looking good and you enjoy the drive over to {friend}'s",
             question: "",
@@ -191,7 +199,8 @@ const theStory = {
         },
         {
             id: 8,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["friend", "hikeLocation"],
             page: "You've arrived at {friend}'s and honk your cars horn. You yell out the window 'The days not getting any longer!' {friend} comes out from thier front door all packed and ready to go. They hop in the passenger seat and you make your way to the mountains with [hikeLocation] in mind.",
             question: "You say to your friend:",
@@ -217,7 +226,8 @@ const theStory = {
         },
         {
             id: 9,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["friend", "hikeLocation", "name"],
             page: "{friend} looks at you with a bit of a puzzled face and replies 'Yah right {name}, you know Im the champ in this car!' You then proceed to drive down the road towards you destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
@@ -231,7 +241,8 @@ const theStory = {
         },
         {
             id: 10,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["friend", "hikeLocation"],
             page: "{friend} replies 'I think today is going to amazing!' You then proceed to drive down the road towards your destination. You and {friend} drive for about fourty minutes before arriving at [hikeLocation].",
             question: "",
@@ -246,7 +257,8 @@ const theStory = {
         },
         {
             id: 11,
-            class: "regularPage",
+            class: "page-container-forest",
+            audio: "src/assets/audio/forestBackground.wav",
             requiredSelections: ["friend"],
             page: "'Ah what a nice smell. The forest always brings me joy' says {friend}. 'Lets look at a map' You ask. Given for the amount of time you have, you should be able to fit in a moderate hike",
             question: "Point towards:",
@@ -272,7 +284,8 @@ const theStory = {
         },
         {
             id: 12,
-            class: "regularPage",
+            class: "page-container-forest",
+            audio: "src/assets/audio/forestBackground.wav",
             requiredSelections: [],
             page: "You decide on a brisk loop you noticed on the map. It will take you past a small lake and hopefully you will spot some wildlife. You think maybe we should double check the weather before leaving the parking lot.",
             question: "Do you?",
@@ -290,7 +303,8 @@ const theStory = {
         },
         {
             id: 13,
-            class: "regularPage",
+            class: "page-container-forest",
+            audio: "src/assets/audio/forestBackground.wav",
             requiredSelections: ["friend"],
             page: "After looking at the map and grabbing your gear you and {friend} head out on your walk. The wind whistles in the trees and you hear cracking branches in the distance. Almost like there are little forest creatures playing around. The air smells fresh and with a scent of pine. The trail is well marked and fairly smooth and flat. You think to yourself this will be a nice walk.",
             question: "",
@@ -304,7 +318,8 @@ const theStory = {
         },
         {
             id: 14,
-            class: "regularPage",
+            class: "page-container-forest",
+            audio: "src/assets/audio/forestBackground.wav",
             requiredSelections: ["friend"],
             page: "As yourself and {friend} continue you notice some wild deer prancing in the woods. They seem to be moving fast and {friend} says 'Wow, look at them go! They are heading in the opposite direction from you. You head deeper and deeper into this trail and eventually find yourself at the lake that was waymarked on the map. You and {friend} take a break and have a seat on some rocks next to the lake",
             question: "Do you?",
@@ -322,7 +337,8 @@ const theStory = {
         },
         {
             id: 15,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "You decide, as much as the weather looks great, that today you really want to catch up on things and take a load off. 'Heck' you say. 'I'm going to have an indoor day!'",
             question: "What do you do first?",
@@ -348,7 +364,8 @@ const theStory = {
         },
         {
             id: 16,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["drink"],
             page: "You take your cup with what remaining [drink] is left and sit on the couch. You grab your television remote and turn on the TV. 'hmm' you ponder.  ",
             question: "What should you watch?",
@@ -374,7 +391,8 @@ const theStory = {
         },
         {
             id: 17,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: ["TVShow", "drink"],
             page: "You turn the channel to [TVShow] and get comfortable. Sipping on your [drink]",
             question: "",
@@ -400,7 +418,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -426,7 +445,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -452,7 +472,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -478,7 +499,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -504,7 +526,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -530,7 +553,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -556,7 +580,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -582,7 +607,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -608,7 +634,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -634,7 +661,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -660,7 +688,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
@@ -686,7 +715,8 @@ const theStory = {
         },
         {
             id: 0,
-            class: "regularPage",
+            audio: "",
+            class: "page-container",
             requiredSelections: [],
             page: "",
             question: "",
